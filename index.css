@@ -1,2 +1,52 @@
-body{
+h1{
+    display: flex;
+    justify-content: center;
+    color: rgb(158, 46, 158);
+}
+
+section{
+    width: 100%;
+    height: 300px;
+    background-color: aquamarine;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+section form{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding: 10px;
+    background-color: blue;
+}
+
+input[type]{
+    border-radius: 8px;
+}
+
+input[type="submit"]{
+    margin-top: 15px;
+    background-color: rgb(93, 211, 93);
+}
+
+form ::placeholder{
+    font-family: cursive;
+    color: blue;
+}
+
+label{
+    font-size: 18px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-top: 15px;
+    color: white;
+}
+
+
+table, th, td{
+    border: 2px solid black;
+    border-collapse: collapse;
+    padding: 3px;
+    margin: 10px;
+    text-align: center;
 }

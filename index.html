@@ -4,17 +4,82 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto notas</title>
     <link rel="stylesheet" href="index.css">
-    <title>Página teste</title>
 </head>
 <body>
+    <h1>Formulário</h1>
 
-<label for="input">Digite a temperatura em Celsius</label> <br>
-<input type="number"  name="temperatura" id="1">
-<br>
-<button id="check" onclick="convinput()">Confirmar</button>
+    <section>
+        <form action="#" onsubmit="enviar(event)">
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" placeholder="Digite seu email :D">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" placeholder="Nome do aluno :)">
+            <label for="nota">Nota</label>
+            <input type="number" name="nota" id="nota" placeholder="Nota do aluno :P">
+            <input type="submit">
+        </form>
+    </section>
+
+    <h1>Tabela</h1>
+    <section>
+        <table>
+            <thead>
+                <th>Nome</th>
+                <th>Nota</th>
+            </thead>
+    
+            <tbody>
+           
+            </tbody>
+        </table>
+    </section>
 
 
-    <script src="index.js"></script>
+    <script>
+        function enviar(event)
+        {
+            event.preventDefault();
+
+            var email = event.target[0].value;
+            var nome = event.target[1].value;
+            var nota = event.target[2].value;
+
+            if (!email || !nome || !nota)
+            {
+                alert("Preencha todos os campos, eles são obrigatórios!")
+                return;
+            }
+
+            var tr = document.createElement("tr");
+            var td_email = document.createElement("td");
+            td_email.innerHTML = email;
+            var td_nome = document.createElement("td");
+            td_nome = innerHTML = nome;
+            var td_nota = document.createElement("td");
+            td_nota = innerHTML = nota;
+
+            if (nota < 5)
+            {
+                td_nota.style.backgroundColor = "red";
+            }
+            else
+            {
+                td_nota.style.backgroundColor = "lightgreen";
+            }
+
+            tr.appendChild(td_email);
+            tr.appendChild(td_nome);
+            tr.appendChild(td_nota);
+
+            document.querySelector("body > section:nth-child(4) > table > tbody").appendChild(tr);
+
+            var aluno = {email, nome, nota}
+
+            localStorage.setItem("aluno", JSON.stringify(aluno))
+            
+        }
+    </script>
 </body>
 </html>
